@@ -3,8 +3,8 @@
 /**
  *_calloc - this is a calloc function
  *@nmemb: number of elemets
- *@size: bit size of each elements
- *Return: pointer to memory assignements
+ *@size: bit size of each element
+ *Return: pointer to memory assignement
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
@@ -21,13 +21,13 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	return (p);
 }
 /**
- *merge - make a merge to the list
- *@arr: one from starts to mid
+ *merge - make a merge
+ *@arr: one from start to mid
  *@tmp: temp array used in merge, was created outside to
  *optimize reducing the system calls
  *@start: first element position
- *@mid: array at the middle
- *@end: last element positions
+ *@mid: array middle
+ *@end: last element position
  **/
 void merge(int *arr, int *tmp, int start, int mid, int end)
 {
@@ -69,12 +69,12 @@ void merge(int *arr, int *tmp, int start, int mid, int end)
 }
 /**
  *mergesort - function that sorts an array of integers
- *in ascending order using the Merge sort algorithms
+ *in ascending order using the Merge sort algorithm
  *@array: array of integers
  *@tmp: temp array used in merge, was created outside to
  *optimize reducing the system calls
  *@start: fisrt element position
- *@end: last element positions
+ *@end: last element position
  *Return: void
  */
 void mergesort(int *array, int *tmp, int start, int end)
@@ -93,18 +93,18 @@ void mergesort(int *array, int *tmp, int start, int end)
 }
 /**
  *merge_sort - function that sorts an array of integers
- *in ascending order using the Merge sort algorithms
- *@size: size of the lists
+ *in ascending order using the Merge sort algorithm
+ *@size: size of the list
  *@array: array of integers
  *Return: void
  */
 void merge_sort(int *array, size_t size)
 {
-	int *temp;
+	int *tmp;
 
 	if (!array || size < 2)
 		return;
-	temp = _calloc(size, sizeof(int));
-	mergesort(array, temp, 0, size - 1);
-	free(temp);
+	tmp = _calloc(size, sizeof(int));
+	mergesort(array, tmp, 0, size - 1);
+	free(tmp);
 }
